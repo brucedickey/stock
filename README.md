@@ -1,5 +1,10 @@
 # README
 
+This is the "Finance-Tracker" app from Udemy's RoR Complete Developer Course: 
+https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course/
+
+----
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
