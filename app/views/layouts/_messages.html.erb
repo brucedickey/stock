@@ -1,0 +1,12 @@
+
+<% if notice && !notice.empty? %>
+  <div class="alert alert-primary" role="alert">
+    <span class="notice"><%= notice %></span>
+  </div>  
+<% end %>  
+
+<% if alert && !alert.empty? %>
+  <div class="alert alert-danger" role="alert">
+    <span class="alert"><%= alert %></span>
+  </div>
+<% end %>
