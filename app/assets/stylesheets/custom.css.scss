@@ -11,3 +11,27 @@
 .navbar-brand {
   font-size: 2rem;
   }
+
+.search-area {
+  padding-top: 30px;
+}
+
+.padding-right-0 {
+  padding-right: 0px;
+}
+
+.padding-left-0 {
+  padding-left: 0px;
+}
+
+.btn-outline-info.stock_search_btn {
+  background-color: rgb(184, 218, 207);
+}
+
+.btn-outline-info.stock_search_btn:hover, .btn-outline-info.stock_search_btn:active {
+  background-color: rgb(193, 252, 234);
+}
+
+.results-block {
+  display: inline-block;
+}

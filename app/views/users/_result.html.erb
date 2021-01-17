@@ -1,0 +1,11 @@
+<div class ="results-block">
+  <%= render 'layouts/messages' %>
+</div>
+
+<% if @stock %>
+  <div class="card card-header results-block">
+    <span style="display: inline-block; width:120px;"><strong>Symbol: </strong> <%= @stock.ticker %></span>
+    <span style="display: inline-block; width:310px;"><strong>Name: </strong> <%= @stock.name %></span>
+    <span style="display: inline-block; width:140px;"><strong>Last Price: </strong> <%= @stock.last_price %></span>
+  </div>
+<% end %>
