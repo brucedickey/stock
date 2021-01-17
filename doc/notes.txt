@@ -1,0 +1,7 @@
+notes.txt
+-------------------------------------------------------------------------------
+
+* To edit the config\credentials.yml.enc file:
+     EDITOR='code --wait' rails credentials:edit
+
+
