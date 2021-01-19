@@ -2,6 +2,10 @@ require 'net/http'
 require 'json'
 
 class CompanyStock < ApplicationRecord
+  has_many :user_stocks
+  has_many :users, through: :user_stocks
+  
+  validates :name, :ticker, presence: true
 
   def self.new_lookup(ticker_symbol) 
     company_info = get_data('tickers', ticker_symbol)
