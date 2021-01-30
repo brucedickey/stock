@@ -7,6 +7,10 @@ class CompanyStock < ApplicationRecord
   
   validates :name, :ticker, presence: true
 
+  def self.check_db(ticker_symbol) 
+    where(ticker: ticker_symbol).first
+  end 
+
   def self.new_lookup(ticker_symbol) 
     company_info = get_data('tickers', ticker_symbol)
     stock_prices = get_data('eod',     ticker_symbol)

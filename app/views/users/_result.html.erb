@@ -7,5 +7,7 @@
     <span style="display: inline-block; width:120px;"><strong>Symbol: </strong> <%= @stock.ticker %></span>
     <span style="display: inline-block; width:310px;"><strong>Name: </strong> <%= @stock.name %></span>
     <span style="display: inline-block; width:140px;"><strong>Last Price: </strong> <%= @stock.last_price %></span>
+    <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: @stock.ticker),
+                class: "btn btn-xs btn-success", method: :post %>
   </div>
 <% end %>

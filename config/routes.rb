@@ -1,6 +1,8 @@
+# For details on the DSL available within this file, 
+# see https://guides.rubyonrails.org/routing.html
+
 Rails.application.routes.draw do
-  resources :user_stocks
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :user_stocks, only: [:create]
 
   devise_for :users
 
