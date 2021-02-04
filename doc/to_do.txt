@@ -2,3 +2,9 @@ to_do.txt
 -------------------------------------------------------------------------------
 
 * Uppercase entered ticker symbols
+
+* It's possible to hit the Add to portfolio button multiple times and add a
+  ticker symbol to the tracking table multiple times. 
+
+* Need a wait cursor while the stock lookup at the 3rd party service is ongoing.
+  Sometimes it has taken 20-ish seconds.
