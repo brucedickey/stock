@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_19_015242) do
+ActiveRecord::Schema.define(version: 2021_02_05_035712) do
 
   create_table "company_stocks", force: :cascade do |t|
     t.string "ticker"
@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 2021_01_19_015242) do
 
   create_table "user_stocks", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "company_stock_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "company_stock_id"
     t.index ["company_stock_id"], name: "index_user_stocks_on_company_stock_id"
     t.index ["user_id"], name: "index_user_stocks_on_user_id"
   end
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2021_01_19_015242) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

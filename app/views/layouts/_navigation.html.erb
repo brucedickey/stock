@@ -32,9 +32,13 @@
         </ul>
 
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item active user-name mr-3">
+            &#x1F464 <!-- Unicode person icon -->
+            <%= current_user.full_name %>
+          </li>
           <li class="nav-item active">
             <%= link_to("Logout", destroy_user_session_path,
-                class: "btn btn-xs btn-info mr-2", method: :delete) %>
+                class: "btn btn-xs btn-info mr-3", method: :delete) %>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
