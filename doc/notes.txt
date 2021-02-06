@@ -8,4 +8,4 @@ notes.txt
 * To edit the config\credentials.yml.enc file:
      EDITOR='code --wait' rails credentials:edit
 
-
+* github repo is udemyrailscourse/finance-tracker-6
