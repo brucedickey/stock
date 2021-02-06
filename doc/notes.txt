@@ -2,8 +2,8 @@ notes.txt
 -------------------------------------------------------------------------------
 
 * User accounts:
-     richard@q.com, richard
-     rebeka@q.com,  rebeka
+     richard@q.com, richard    Richard Queue (Admin)
+     rebeka@q.com,  rebeka     Rebeka Queue
 
 * To edit the config\credentials.yml.enc file:
      EDITOR='code --wait' rails credentials:edit
