@@ -24,7 +24,7 @@
   padding-left: 0px;
 }
 
-.btn-outline-info.stock_search_btn {
+.btn-outline-info.stock_search_btn, .btn-outline-info.friend_search_btn{
   background-color: rgb(184, 218, 207);
 }
 
@@ -33,8 +33,14 @@
 }
 
 .results-block {
-  display: inline-block;
-  margin-bottom: 2rem;
+  display: block;
+  margin-bottom: 5px;
+  padding: 5px;
+  width: 550px;
+}
+
+.friends-table-margin-top {
+  margin-top: 30px;
 }
 
 .user-name {
