@@ -31,6 +31,8 @@ gem 'devise-bootstrap-views', '~> 1.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  # To format objects while debugging
+  gem 'awesome_print', '>= 1.9.2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Use sqlite3 as the database for Active Record
