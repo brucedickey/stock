@@ -2,8 +2,23 @@ notes.txt
 -------------------------------------------------------------------------------
 
 * User accounts:
-     richard@q.com, richard    Richard Queue (Admin)
-     rebeka@q.com,  rebeka     Rebeka Queue
+     richard@q.com             richard       Richard Queue (Admin)
+     rebeka@q.com              rebeka        Rebeka Queue
+     robbie@q.com              robbie        Robbie Queue
+     susie@q.com               susiesusie    Susie Queue
+     pidi@q.com                pidipidi      Pidi Queue
+     april@rains.name          aprilrains    April Rains
+     richard@lionheart.com     richard1      Richard Lions
+     pc@lso.com                majorthird    Colin Davis
+     billbun@burrow.home       nomnomnom     William Weasley
+     umlaut@burrow.com         longumlaut    Fluer Weasley
+     force@space.com           yumyumfrog    Grogu
+     manda@lorian.com          theman        Manda Lorian 
+     luke@skywalker.com        skywalker     Luke Skywalker
+     cordell@rangerdiv.tx.gov  texas#1       Cordell Walker
+
+* To remove all stock for a user:
+     user.stocks.delete_all
 
 * To edit the config\credentials.yml.enc file:
      EDITOR='code --wait' rails credentials:edit
