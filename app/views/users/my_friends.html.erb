@@ -1,0 +1,27 @@
+<h1>My Friends</h1>
+
+<div class="search-area">
+  <h3>Search Friends</h3>
+  <%= form_tag 'search_friend', remote: true, method: :get do %>
+    <div class="form-group row">
+      <div class="col-sm-9 padding-right-0">
+        <%= text_field_tag :friend, params[:friend], placeholder: "Friend's name", 
+                           autofocus: true, class: "form-control form-control-lg" %>
+      </div>
+      <div class="col-sm-3 padding-left-0">
+        <%= button_tag type: :submit, class: "btn btn-outline-info friend_search_btn" do %>
+          <!-- Left-leaning magnifying glass -->
+          <span style="font-size: 1.45em;"> &#128269; </span>
+        <% end %>  
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div id="friend_results">
+</div>
+
+<% if !@tracked_friends.empty? %>
+  <div class="friends-table-margin-top"></div
+  <%= render 'friends/list' %>
+<% end %>
