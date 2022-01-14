@@ -10,15 +10,14 @@
       </div>
       <div class="col-sm-3 padding-left-0">
         <%= button_tag type: :submit, class: "btn btn-outline-info stock_search_btn" do %>
-          <!-- Left-learning magnifying glass -->
-          <span style="font-size: 1.45em;"> &#128269; </span>
+          <i class="fa fa-search" style="font-size: 2em;"></i>
         <% end %>  
       </div>
     </div>
   <% end %>
 </div>
 
-<div id="stock_results">
+<div id="stock_results">   <!-- Search results are put into here -->
 </div>
 
 <% if !@tracked_stocks.empty? %>
