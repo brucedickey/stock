@@ -11,6 +11,11 @@ class CompanyStock < ApplicationRecord
     where(ticker: ticker_symbol).first
   end 
 
+  def self.price_lookup(ticker_symbol)
+    stock_prices = get_data('eod', ticker_symbol)
+    stock_prices['close']
+  end 
+
   def self.stock_lookup(ticker_symbol) 
     company_info = get_data('tickers', ticker_symbol)
     stock_prices = get_data('eod',     ticker_symbol)

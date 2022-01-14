@@ -2,7 +2,9 @@ class CompanyStocksController < ApplicationController
 
   def search 
     if params[:stock].present?
-      @stock = CompanyStock.stock_lookup(params[:stock])
+      ticker = params[:stock].strip
+      @stock = CompanyStock.stock_lookup(ticker)
+      
       if @stock
         respond_to do |format|
           format.js { render partial: 'users/stock_result' }
