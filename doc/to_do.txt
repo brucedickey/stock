@@ -1,10 +1,29 @@
 to_do.txt
 -------------------------------------------------------------------------------
 
-* Uppercase entered ticker symbols
+* Fix: Remove the "Add to portfolio" button on the logged-in user's list of
+       stocks, for stocks not already tracked.
 
-* It's possible to hit the Add to portfolio button multiple times and add a
+* Fix: its possible to add a stock already being tracked, if hitting Add to Portfolio from a 
+  friend's stock list
+
+* Fix: It's possible to hit the Add to portfolio button multiple times and add a
   ticker symbol to the tracking table multiple times. 
 
-* Need a wait cursor while the stock lookup at the 3rd party service is ongoing.
+* Fix: Check for stock tracked by a user by looking at the user_stocks table, 
+       not the company_stocks table. Don't need the company_stocks table when refreshing the 
+       stock price at each page load for display. That table can be removed.
+       
+
+
+--------------------
+Possible extensions:
+
+* Add a wait cursor while the stock lookup at the 3rd party service is ongoing.
   Sometimes it has taken 20-ish seconds.
+
+  http://malsup.com/jquery/block/
+
+  Is there a Rails way?
+
+* Add paper trading support w/ history graphs

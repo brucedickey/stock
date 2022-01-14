@@ -1,11 +1,43 @@
 notes.txt
 -------------------------------------------------------------------------------
 
+* Course used nodejs 12.16.0. Use that to avoid lib incompatibilities and bugs.
+
+* Start server with `rails server` or `rails s`.
+
+* To deploy to heroku
+   After deployment, visit: https://alpha-blog-bd.herokuapp.com/, or
+                       run: heroku open
+
+   1. Ensure you have committed your code to your git repo, then:
+
+     git push heroku master
+
+   2. Then run any pending migrations:
+
+     heroku run rake db:migrate
+     or
+     heroku run rails db:migrate
+
+   3. Run bundle install on heroku:
+
+     heroku run bundle install
+
+* To set admin user from heroku app run:
+
+     heroku run rails console
+
+  Then grab a user (example, user = User.last):
+
+     user.toggle!(:admin)
+
+  That will set the admin column to true
+
 * User accounts:
-     richard@q.com             richard       Richard Queue (Admin)
-     rebeka@q.com              rebeka        Rebeka Queue
+     richard@q.com             richard       Richard Queue (Admin)   has stock
+     rebeka@q.com              rebeka        Rebeka Queue            has stock
      robbie@q.com              robbie        Robbie Queue
-     susie@q.com               susiesusie    Susie Queue
+     susie@q.com               susiesusie    Susie Queue             has stock
      pidi@q.com                pidipidi      Pidi Queue
      april@rains.name          aprilrains    April Rains
      richard@lionheart.com     richard1      Richard Lions
@@ -23,4 +55,18 @@ notes.txt
 * To edit the config\credentials.yml.enc file:
      EDITOR='code --wait' rails credentials:edit
 
-* github repo is udemyrailscourse/finance-tracker-6
+* Prof's github repo is udemyrailscourse/finance-tracker-6
+
+* Font Awesome icons:
+    https://blog.corsego.com/rails-6-install-fontawesome-with-webpacker
+    https://fontawesome.com/icons?d=gallery&m=free
+
+* It would be nice to always see the latest stock price rather than what it was
+  it was added to the company_stocks table. Therefore, I'm updating the price 
+  displayed from the 3rd party API whenever a stock list is shown, rather than
+  read the initial last_price from the table. The last_price column is not 
+  needed anymore. Also don't need the suggested enhancement of the Refresh
+  button.
+
+  With ONLY 10 stocks per user, it is not a big time hit to re-read the
+  stock prices upon displaying the list of stocks. 
