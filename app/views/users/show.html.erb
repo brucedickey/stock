@@ -1,0 +1,31 @@
+<h2>User Details</h2>
+
+<div class="card card-header results-block">
+  <p style="display: inline-block;">
+    <strong>Name: </strong> <%= "#{@user.first_name} #{@user.last_name}" %>
+    <strong>Email: </strong> <%= @user.email %>
+  </p>
+
+  <% if current_user.friend_already_displayed?(current_user, @user) %>
+    <span class="badge badge-secondary">
+      You are friends
+    </span>
+  <% elsif current_user.under_friend_limit?(current_user) %>  
+    <%= link_to 'Follow', 
+                user_friends_path(user: current_user, friend: @user.id),
+                style: "display: inline-block;",
+                class: "btn btn-xs btn-success", method: :post %>
+  <% else %>
+    <span class="badge badge-secondary">
+      You already track 10 friends
+    </span>
+  <% end %>
+</div>
+
+<% if !@tracked_stocks.empty? %>
+  <%= render 'stocks/list' %>
+<% else %>
+  <p class="lead">
+    This user is not tracking any stocks
+  </p>  
+<% end %>
