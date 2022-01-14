@@ -3,28 +3,47 @@
 </div>
 
 <% if @friends %>
-  <% @friends.each do |friend| %>
-    <div class="card card-header results-block">
-      <p style="display: inline-block; width: 250px;">
-        <strong>Name: </strong> <%= friend.first_name + ' ' + friend.last_name %>
-      </p>
+  <strong>Search Results: </strong>
 
-      <% if current_user.friend_already_displayed?(current_user, friend) %> 
-        <p class="badge badge-secondary">
-          You are already displaying this friend.
-        </p>
-      <% elsif !current_user.under_friend_limit? %> 
-        <p class="badge badge-secondary">
-          You are already displaying ten friends.
-        </p
-      <% else %>
-        <%= link_to 'Follow', 
-                    user_friends_path(user: current_user, friend: friend.id),
-                    class: "btn btn-xs btn-success", method: :post %>
-        <%= link_to 'View Profile', 
-                    user_friends_path(user: current_user, friend: friend.id),
-                    class: "btn btn-xs btn-success" %>                      
-      <% end %>
-    </div>
-  <% end %>
+  <div class="card card-header results-block">
+    <table>
+      <thead>
+        <tr>
+          <th> Name </th>
+          <th> Email </th>
+          <th> Actions </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @friends.each do |friend| %>
+          <tr>
+            <td>
+              <%= friend.first_name + ' ' + friend.last_name %> 
+            </td>
+            <td> 
+            <%= friend.email %>
+            </td>
+            <td>
+              <%= link_to 'View Profile', user_path(id: friend.id),
+                          class: "btn btn-xs btn-success" %> 
+
+              <% if current_user.friend_already_displayed?(friend) %> 
+                <span class="badge badge-secondary">
+                  You are friends
+                </span>
+              <% elsif !current_user.under_friend_limit? %> 
+                <span class="badge badge-secondary">
+                  You already track 10 friends
+                </span>
+              <% else %>
+                <%= link_to 'Follow', 
+                            user_friends_path(user: current_user, friend: friend.id),
+                            class: "btn btn-xs btn-success", method: :post %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>    
+  </div>
 <% end %>

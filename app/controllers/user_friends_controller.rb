@@ -1,7 +1,8 @@
 class UserFriendsController < ApplicationController
    def create 
     # Add friend to list of tracked friends (create a list item)
-    friendship     = Friendship.create(user_id: params[:user], friend_id: params[:friend])
+    friendship     = current_user.friendships.create(friend_id: params[:friend])
+    
     @friend        = User.find(friendship.friend_id)
     flash[:notice] = "Following #{full_name}"
 
@@ -10,7 +11,7 @@ class UserFriendsController < ApplicationController
 
   def destroy 
     # Remove friend from list of tracked friends (remove list item)
-    Friendship.find_by(user_id: current_user.id, friend_id: params[:id]).destroy
+    current_user.friendships.where(friend_id: params[:id]).first.destroy
 
     @friend        = User.find(params[:id])
     flash[:notice] = "No longer following #{full_name}"
@@ -19,7 +20,7 @@ class UserFriendsController < ApplicationController
   end
 
   def full_name 
-    name = "#{@friend.first_name} #{@friend.last_name}"
-    name.strip! || name
+    return "#{@friend.first_name} #{@friend.last_name}".strip if @friend.first_name || @friend.last_name
+    "Anonymous"
   end 
 end
