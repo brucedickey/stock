@@ -9,6 +9,10 @@ notes.txt
    After deployment, visit: https://alpha-blog-bd.herokuapp.com/, or
                        run: heroku open
 
+   To create a heroku app on a particular stack:
+
+      heroku create --stack heroku-18
+
    1. Ensure you have committed your code to your git repo, then:
 
      git push heroku master
@@ -22,6 +26,10 @@ notes.txt
    3. Run bundle install on heroku:
 
      heroku run bundle install
+
+* To undo a heroku create:
+
+   heroku apps:destroy -a sleepy-chamber-3162
 
 * To set admin user from heroku app run:
 
