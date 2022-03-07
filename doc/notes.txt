@@ -22,6 +22,7 @@ notes.txt
      heroku run rake db:migrate
      or
      heroku run rails db:migrate
+     
 
    3. Run bundle install on heroku:
 
